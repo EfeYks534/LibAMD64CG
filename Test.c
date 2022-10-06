@@ -17,7 +17,7 @@ int main()
 
 	arg.r   = REG_R13;
 	arg.rm  = REG_RCX;
-	arg.mod = MOD_IND;
+	arg.mod = MOD_DIR;
 	arg.im  = 0x69;
 	BinGenInstr(&bin, &arg, "MOV rq mq | W 8B /r");
 

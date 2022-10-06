@@ -1,7 +1,6 @@
 #include "AMD64CG.h"
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <ctype.h>
 
 #define II_MR 0
@@ -227,6 +226,7 @@ static int ParseInstrIdent(struct InstrIdent *id, char *ident)
 	return 1;
 }
 
+/*
 static void PrintInstr(struct InstrIdent *id)
 {
 	printf("%s ", id->name);
@@ -274,6 +274,7 @@ static void PrintInstr(struct InstrIdent *id)
 
 	putchar('\n');
 }
+*/
 
 static int InstrGenBin(uint8_t **bin, struct InstrIdent *id, struct BinIArg *arg)
 {
@@ -389,7 +390,7 @@ int BinGenInstr(uint8_t **bin, struct BinIArg *arg, const char *const_ident)
 	struct InstrIdent id = (struct InstrIdent) { 0 };
 
 	if(ParseInstrIdent(&id, ident) == 1) {
-		PrintInstr(&id);
+		//PrintInstr(&id);
 
 		if(InstrGenBin(bin, &id, arg) == 1) {
 			free(ident);
